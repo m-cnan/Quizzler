@@ -1,0 +1,20 @@
+.mainhead {
+    text-align: center;
+
+}
+
+
+.intro {
+
+text-align: center;
+background-color: color(srgb rgb(247, 244, 244) rgb(241, 247, 241) rgb(103, 194, 239));
+}
+.startbutton {
+
+    padding: 5px 15px;
+    border: 2px solid #333;
+    border-radius: 15px;
+    display: inline-block;
+  
+  
+}
