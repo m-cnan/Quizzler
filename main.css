@@ -15,6 +15,7 @@ background-color: color(srgb rgb(247, 244, 244) rgb(241, 247, 241) rgb(103, 194,
     border: 2px solid #333;
     border-radius: 15px;
     display: inline-block;
-  
+    cursor: pointer;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
   
 }
