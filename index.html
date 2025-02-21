@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzler</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Quizzler!</h1>
+    </header>
+
+    <!-- Home Screen -->
+    <main class="home-container">
+        <p>Customize your quiz and start the challenge!</p>
+        <form id="quiz-form">
+            <label for="topic">Enter a Topic:</label>
+            <input type="text" id="topic" name="topic" placeholder="E.g., History, Science, AI" required>
+
+            <label for="difficulty">Select difficulty:</label>
+            <select id="difficulty" name="difficulty" required>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+
+            <label for="numQuestions">Number of questions:</label>
+            <input type="number" id="numQuestions" name="numQuestions" min="1" max="50" value="5" required>
+
+            <button type="submit" class="btn start">Start Quiz</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Quizzler</p>
+    </footer>
+</body>
+</html>
