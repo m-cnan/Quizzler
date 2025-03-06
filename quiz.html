@@ -5,19 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizzler - Start Quiz</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <script defer src="quiz.js"></script>
 </head>
 <body>
     <header>
         <h1>Quiz Time!</h1>
     </header>
 
-    <section id="quiz-container">
-        <h2>Quiz Questions</h2>
-        <div id="question"></div>
+    <main id="quiz-container">
+        <h2 id="question"></h2>
         <div id="answers"></div>
         <button id="next-btn" class="btn next hidden">Next Question</button>
-    </section>
+    </main>
 
     <section id="score-container" class="hidden">
         <h2>Your Score: <span id="final-score"></span></h2>
