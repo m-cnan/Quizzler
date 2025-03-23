@@ -38,13 +38,6 @@ cd quizzler
 
 
 
-Live Demo 🌐
-
-Play Quizzler Now! (Replace with your deployed link)
-
-Screenshots 📸
-
-(Add images or GIFs showcasing the app in action)
 
 Future Improvements ✨
 
