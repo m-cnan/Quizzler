@@ -6,7 +6,7 @@ document.getElementById("quiz-form").addEventListener("submit", function (event)
     const numQuestions = document.getElementById("numQuestions").value;
 
     if (!topic) {
-        alert("Please enter a valid topic.");
+        alert("Please  enter a valid topic.");
         return;
     }
 

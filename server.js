@@ -1,6 +1,6 @@
-import express from "express";
+import express from "express";   
 import dotenv from "dotenv";
-import cors from "cors";
+import cors from "cors";     //communication with different server
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 dotenv.config();
@@ -11,14 +11,14 @@ if (!process.env.GEMINI_API_KEY) {
 }
 
 const app = express();
-app.use(cors());
-app.use(express.json());
+app.use(cors());          //Allows frontend clients to make API requests.
+app.use(express.json());  //Automatically parses incoming JSON data.
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);         //setting AI
+const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });     
 
 app.post("/generate-quiz", async (req, res) => {
-    const { difficulty, topic, numQuestions } = req.body;
+    const { difficulty, topic, numQuestions } = req.body;  // extract content from request body
 
     if (!topic || !numQuestions) {
         return res.status(400).json({ error: "Missing required fields" });
@@ -32,12 +32,12 @@ app.post("/generate-quiz", async (req, res) => {
     ]`;
     
     try {
-        const result = await model.generateContent(prompt);
+        const result = await model.generateContent(prompt); //calls the AI 
         const responseText = await result.response.text();
-        const jsonMatch = responseText.match(/\[.*\]/s);
-        if (!jsonMatch) throw new Error("Invalid AI response format");
-        const questions = JSON.parse(jsonMatch[0]);
-        res.json({ questions });
+        const jsonMatch = responseText.match(/\[.*\]/s);      //Regex (/\[.*\]/s) extracts the JSON array from the AI’s response.
+        if (!jsonMatch) throw new Error("Invalid AI response format");   
+        const questions = JSON.parse(jsonMatch[0]);            // convert into java object
+        res.json({ questions });          
     } catch (error) {
         console.error("❌ AI Error:", error);
         res.status(500).json({ error: "Failed to generate quiz" });
@@ -45,4 +45,4 @@ app.post("/generate-quiz", async (req, res) => {
 });
 
 app.use(express.static("public"));
-app.listen(3000, () => console.log("✅ Server running on port 3000"));
+app.listen(3000, () => console.log("✅ Server running on port 3000")); //lets start 
